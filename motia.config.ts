@@ -1,5 +1,5 @@
 export default {
-  name: "motia-rfp-backend",
+  projectName: "motia-rfp-backend",
   stepsDir: "./steps",
-  workflowsDir: "./workflows"
+  workflowsDir: "./workflows",
 };
