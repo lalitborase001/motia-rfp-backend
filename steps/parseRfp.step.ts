@@ -1,15 +1,10 @@
-import { Step } from "motia";
-
-const parseRfp: Step = {
+export const config = {
   name: "parseRfp",
   type: "task",
-
-  handler: async (ctx) => {
-    ctx.state.rawText = ctx.state.rawText.trim();
-    ctx.log.info("RFP parsed");
-
-    return ctx.next();
-  },
 };
 
-export default parseRfp;
+export default async function parseRfp(ctx: any) {
+  ctx.state.rawText = ctx.state.rawText.trim();
+  ctx.log.info("RFP parsed");
+  return ctx.next();
+}
