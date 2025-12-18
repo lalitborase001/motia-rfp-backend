@@ -1,16 +1,24 @@
-export async function extractRequirements(ctx) {
-  if (!ctx.state.rawText) {
-    ctx.log.error("RFP text missing");
-    ctx.state.status = "FAILED";
-    throw new Error("RFP parsing failed");
-  }
+import { Step } from "motia";
 
-  ctx.state.requirements = [
-    "User authentication",
-    "Admin dashboard",
-    "Reporting system"
-  ];
+const extractRequirements: Step = {
+  name: "extractRequirements",
+  type: "task",
 
-  ctx.log.info("Requirements extracted");
-  return ctx.next();
-}
+  handler: async (ctx) => {
+    if (!ctx.state.rawText) {
+      ctx.state.status = "FAILED";
+      throw new Error("RFP text missing");
+    }
+
+    ctx.state.requirements = [
+      "User authentication",
+      "Admin dashboard",
+      "Reporting module",
+    ];
+
+    ctx.log.info("Requirements extracted");
+    return ctx.next();
+  },
+};
+
+export default extractRequirements;
