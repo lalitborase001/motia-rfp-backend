@@ -1,7 +1,10 @@
-export const rfpWorkflow = [
-  "submitRfp",
-  "parseRfp",
-  "extractRequirements",
-  "estimateCost",
-  "generateProposal",
-];
+export default {
+  name: "rfpWorkflow",
+  steps: [
+    "submitRfp",
+    "parseRfp",
+    "extractRequirements",
+    "estimateCost",
+    "generateProposal",
+  ],
+};
