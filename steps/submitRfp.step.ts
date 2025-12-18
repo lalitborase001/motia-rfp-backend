@@ -1,11 +1,22 @@
-export async function submitRfp(ctx) {
-  const { text } = ctx.input;
+import { Step } from "motia";
 
-  ctx.state = {
-    rfpId: crypto.randomUUID(),
-    rawText: text,
-    status: "IN_PROGRESS",
-  };
+const submitRfp: Step = {
+  name: "submitRfp",
+  type: "api",
 
-  return ctx.next();
-}
+  handler: async (ctx) => {
+    const { text } = ctx.input;
+
+    ctx.state = {
+      rfpId: crypto.randomUUID(),
+      rawText: text,
+      status: "IN_PROGRESS",
+    };
+
+    ctx.log.info("RFP submitted");
+
+    return ctx.next();
+  },
+};
+
+export default submitRfp;
