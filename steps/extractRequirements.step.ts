@@ -1,13 +1,16 @@
 export async function extractRequirements(ctx) {
-  const text = ctx.state.rawText;
+  if (!ctx.state.rawText) {
+    ctx.log.error("RFP text missing");
+    ctx.state.status = "FAILED";
+    throw new Error("RFP parsing failed");
+  }
 
   ctx.state.requirements = [
     "User authentication",
-    "Dashboard",
-    "Reporting module",
+    "Admin dashboard",
+    "Reporting system"
   ];
 
-  ctx.log.info("Requirements extracted", ctx.state.requirements);
-
+  ctx.log.info("Requirements extracted");
   return ctx.next();
 }
