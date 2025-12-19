@@ -1,6 +1,6 @@
 export const config = {
   name: "estimateCost",
-  type: "task",
+  type: "step",
 };
 
 export default async function estimateCost(ctx: any) {

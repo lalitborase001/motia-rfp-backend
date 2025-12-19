@@ -1,6 +1,6 @@
 export const config = {
   name: "generateProposal",
-  type: "task",
+  type: "step",
 };
 
 export default async function generateProposal(ctx: any) {

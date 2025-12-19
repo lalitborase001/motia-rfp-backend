@@ -1,6 +1,6 @@
 export const config = {
   name: "extractRequirements",
-  type: "task",
+  type: "step",
 };
 
 export default async function extractRequirements(ctx: any) {
