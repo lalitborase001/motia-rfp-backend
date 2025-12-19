@@ -1,6 +1,12 @@
 export const config = {
   name: "submitRfp",
   type: "api",
+
+  path: "/submit-rfp",
+  method: "POST",
+
+  // This tells Motia what this step triggers
+  emits: ["rfpWorkflow"],
 };
 
 export default async function submitRfp(ctx: any) {
@@ -13,6 +19,5 @@ export default async function submitRfp(ctx: any) {
   };
 
   ctx.log.info("RFP submitted");
-
-  return ctx.next();
+  return ctx.emit("rfpWorkflow");
 }
