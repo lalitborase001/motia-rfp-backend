@@ -1,6 +1,6 @@
 export const config = {
   name: "parseRfp",
-  type: "step",
+  type: "workflow",
 };
 
 export default async function parseRfp(ctx: any) {

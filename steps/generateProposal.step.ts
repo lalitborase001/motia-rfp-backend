@@ -1,6 +1,6 @@
 export const config = {
   name: "generateProposal",
-  type: "step",
+  type: "workflow",
 };
 
 export default async function generateProposal(ctx: any) {

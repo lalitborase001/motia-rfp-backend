@@ -1,6 +1,6 @@
 export const config = {
   name: "submitRfp",
-  type: "api",
+  type: "workflow",
 
   path: "/submit-rfp",
   method: "POST",
